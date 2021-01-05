@@ -1,6 +1,16 @@
 <?php
 
 class TouchControlExtension extends Minz_Extension {
+    public function install() {
+        return true;
+    }
+
+    public function uninstall() {
+        return true;
+    }
+
+    public function handleConfigureAction() {
+    }
 
     public function init() {
         Minz_View::appendScript($this->getFileUrl('jquerymin.js', 'js'),'','','');
@@ -8,5 +18,4 @@ class TouchControlExtension extends Minz_Extension {
         Minz_View::appendScript($this->getFileUrl('detectswipe.js', 'js'),'','','');        
         Minz_View::appendScript($this->getFileUrl('script.js', 'js'),'','','');   
     }
-
 }
